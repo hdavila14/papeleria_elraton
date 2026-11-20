@@ -1,0 +1,30 @@
+
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(50),
+    nombre VARCHAR(100),
+    categoria VARCHAR(50),
+    precio_costo DECIMAL(10,2),
+    precio_venta DECIMAL(10,2),
+    stock INT
+);
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL,
+    `contraseña` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ventas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    producto VARCHAR(100),
+    precio DECIMAL(10,2),
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS bajas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    producto VARCHAR(100),
+    motivo VARCHAR(200),
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

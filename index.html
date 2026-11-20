@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - El Ratón</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="login-box">
+        <h1>🐭 Papelería "El Ratón"</h1>
+        
+        <form onsubmit="login(event)">
+             <input type="text" id="usuario" placeholder="Usuario" required>
+             <input type="password" id="password" placeholder="Contraseña" required>
+             <button type="submit">INGRESAR</button>
+        </form>
+
+        <p>¿Olvidó su contraseña?</p>
+    </div>
+</div>
+
+<script>
+function login(e) {
+    e.preventDefault(); // evita que se recargue la página
+
+    let user = document.getElementById("usuario").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "1234"){
+        window.location.href = "alta.php"; // 👈 AQUÍ conectas con la segunda interfaz
+    } else {
+        alert("Datos incorrectos ❌");
+    }
+    }
+</script>
+</body>
+</html>
